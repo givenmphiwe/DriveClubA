@@ -10,15 +10,39 @@
   <div class="ContactData">
     <div class="ContactIcon">
       <div class="PhoneIcon">
-        <i class="fa fa-phone"></i>
+        <i
+          class="fa fa-phone fa-rotate-90"
+          style="color: #ffffff; margin: 15px 15px 15px 15px"
+        ></i>
+      </div>
+
+      <div class="details">
+        <p class="d">Phone</p>
+        <p>082 000 0000</p>
       </div>
 
       <div class="SendIcon">
-        <i class="fa fa-paper-plane" aria-hidden="true"></i>
+        <i
+          class="fa fa-paper-plane"
+          style="color: #ffffff; margin: 15px 15px 15px 15px"
+        ></i>
+      </div>
+
+      <div class="detailEmail">
+        <p class="d">Email</p>
+        <p>email@example.com</p>
       </div>
 
       <div class="LocationIcon">
-        <i class="fa fa-map-marker" aria-hidden="true"></i>
+        <i
+          class="fa fa-map-marker"
+          style="color: #ffffff; margin: 15px 15px 15px 15px"
+        ></i>
+      </div>
+
+      <div class="detailLocation ">
+        <p class="d">Location</p>
+        <p>42 Business RD</p>
       </div>
     </div>
 
@@ -113,6 +137,21 @@ export default {
   width: 264px;
   height: 228px;
 
+  .details {
+    position: absolute;
+    left: 208px;
+    top: 102px;
+  }
+  
+  .d {
+    width: 58px;
+    height: 25px;
+    text-align: left;
+    font: normal normal medium 18px/21px Poppins;
+    letter-spacing: 0.36px;
+    color: #ffffff;
+    opacity: 0.87;
+  }
   .PhoneIcon {
     width: 48px;
     height: 48px;
