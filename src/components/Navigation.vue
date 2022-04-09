@@ -2,8 +2,8 @@
   <header :class="{ 'scrolled-nav': scrolledNav }">
     <nav>
       <div class="branding">
-        <p>DRIVECLUB</p>
-        </div>
+        <img class="logo" src="../assets/logo.svg" />
+      </div>
 
       <ul v-show="!mobile" class="navigation">
         <li>
@@ -29,7 +29,9 @@
             <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
           </li>
           <li>
-            <router-link class="link" :to="{ name: '' }">Contact us</router-link>
+            <router-link class="link" :to="{ name: '' }"
+              >Contact us</router-link
+            >
           </li>
         </ul>
       </transition>
@@ -41,88 +43,89 @@
 export default {
   name: "navigation",
   data() {
-    return{
+    return {
       scrolledNav: null,
       mobile: null,
       mobileNav: null,
       windowWidth: null,
-    }
+    };
   },
   created() {
-    window.addEventListener('resize', this.checkScreen);
+    window.addEventListener("resize", this.checkScreen);
     this.checkScreen;
   },
   //
-methods: {
-  toggleMobileNav() {
-    this.mobileNav = !this.mobileNav
-  },
+  methods: {
+    toggleMobileNav() {
+      this.mobileNav = !this.mobileNav;
+    },
 
-  updateScroll() {
-    const scrollPosition = window.scrollY;
-    if (scrollPosition > 50) {
-      this.scrolledNav = true;
+    updateScroll() {
+      const scrollPosition = window.scrollY;
+      if (scrollPosition > 50) {
+        this.scrolledNav = true;
+        return;
+      }
+      this.scrolledNav = false;
+    },
+
+    checkScreen() {
+      this.windowWidth = window.innerWidth;
+      if (this.windowWidth <= 750) {
+        this.mobile = true;
+        return;
+      }
+      this.mobile = false;
+      this.mobileNav = false;
       return;
-    }
-    this.scrolledNav = false;
+    },
   },
-
-
-  checkScreen() {
-    this.windowWidth = window.innerWidth;
-    if(this.windowWidth <= 750) {
-      this.mobile = true;
-      return;
-    }
-    this.mobile = false;
-    this.mobileNav = false;
-    return;
-  }
-}
-
 };
-
-
 </script>
 
 <style lang="scss" scoped>
-header { 
+@import url("https://fonts.googleapis.com/css?family=Proxima+Nova");
+
+header {
   //background-color: rgba(0,0,0,0.8);
   z-index: 99;
   width: 100%;
   position: fixed;
-  transition: .5s ease all;
-  color: #FFFFFF;
+  transition: 0.5s ease all;
+  color: #ffffff;
 
   nav {
     display: flex;
     flex-direction: row;
     position: relative;
     padding: 12px 0;
-    transition: .5s ease all;
+    transition: 0.5s ease all;
     width: 90%;
     margin: 0 auto;
-    @media(min-width: 1140px){
-      max-width: 1140px
+    @media (min-width: 1140px) {
+      max-width: 1140px;
     }
 
     ul,
     .link {
-      font-weight:500px;
+      text-align: center;
+      font: normal normal 300 16px/22px Poppins;
+      letter-spacing: 0.64px;
+      color: #ffffff;
       color: #fff;
       list-style: none;
       text-decoration: none;
     }
 
-    li{
+    li {
       text-transform: uppercase;
       padding: 16px;
-      margin-left: 16px
+      margin-left: 16px;
     }
 
-    .link{
+    .link {
       font-size: 14px;
-      transition: .5s ease all;
+      transition: 0.5s ease all;
       padding-bottom: 4px;
       border-bottom: 1 pc solid transparent;
 
@@ -139,7 +142,7 @@ header {
       p {
         width: 50px;
         transition: 0.5s ease all;
-      }      
+      }
     }
 
     .navigation {
@@ -163,9 +166,9 @@ header {
         transition: 0.5s ease all;
       }
     }
-    
+
     .icon-active {
-      transform: rotate(180deg)
+      transform: rotate(180deg);
     }
 
     .dropdown-nav {
@@ -182,12 +185,10 @@ header {
       li {
         margin-left: 0;
 
-        .link{
+        .link {
           color: white;
         }
-        
       }
-      
     }
 
     .mobile-nav-enter-active,
@@ -200,11 +201,9 @@ header {
       transform: translate(-250px);
     }
 
-    .mobile-nav-enter-to{
-      transform: translateX(0)
+    .mobile-nav-enter-to {
+      transform: translateX(0);
     }
   }
-
-
 }
 </style>
