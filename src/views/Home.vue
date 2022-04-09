@@ -34,14 +34,19 @@
     <div class="models">MODEL S</div>
     <div class="learn">Learn more</div>
   </div>
+  <div type="footer">
+    <Footer/>
+  </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import Navigation from "../components/Navigation.vue";
+import Footer from "../components/Footer.vue"
 export default {
   name: "Home",
-  components: { Navigation },
+  components: { Navigation,Footer },
+  
 };
 </script>
 
