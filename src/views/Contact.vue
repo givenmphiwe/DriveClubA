@@ -8,6 +8,20 @@
   </div>
 
   <div class="ContactData">
+    <div class="ContactIcon">
+      <div class="PhoneIcon">
+        <i class="fa fa-phone"></i>
+      </div>
+
+      <div class="SendIcon">
+        <i class="fa fa-paper-plane" aria-hidden="true"></i>
+      </div>
+
+      <div class="LocationIcon">
+        <i class="fa fa-map-marker" aria-hidden="true"></i>
+      </div>
+    </div>
+
     <div class="ContactDetails">
       <div class="heading">HOW CAN WE HELP YOU?</div>
 
@@ -93,6 +107,42 @@ export default {
     -webkit-text-stroke: 3px #fff;
   }
 }
+.ContactIcon {
+  margin-top: 102px;
+  margin-left: 140px;
+  width: 264px;
+  height: 228px;
+
+  .PhoneIcon {
+    width: 48px;
+    height: 48px;
+    border: 2px solid #ff0050;
+    background: #ff00504d 0% 0% no-repeat padding-box;
+    border: 2px solid #ff0050;
+    opacity: 1;
+  }
+
+  .SendIcon {
+    margin-top: 40px;
+    width: 48px;
+    height: 48px;
+    border: 2px solid #ff0050;
+    background: #ff00504d 0% 0% no-repeat padding-box;
+    border: 2px solid #ff0050;
+    opacity: 1;
+  }
+
+  .LocationIcon {
+    margin-top: 40px;
+    width: 48px;
+    height: 48px;
+    border: 2px solid #ff0050;
+    background: #ff00504d 0% 0% no-repeat padding-box;
+    border: 2px solid #ff0050;
+    opacity: 1;
+  }
+}
+
 .ContactData {
   height: 430px;
   width: 1438px;
@@ -107,7 +157,7 @@ export default {
     top: 322px;
     left: 732px;
     width: 588px;
-    height: 738px;
+    height: 748px;
 
     .heading {
       margin-top: 60px;
@@ -124,7 +174,7 @@ export default {
       margin-top: 24px;
     }
     .TextinputNumber {
-      margin-top: 58px;
+      margin-top: 38px;
     }
     .TextinputEmail {
       margin-top: 38px;
