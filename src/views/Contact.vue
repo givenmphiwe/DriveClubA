@@ -8,9 +8,31 @@
   </div>
 
   <div class="ContactData">
+    <div class="ContactDetails">
+      <div class="heading">HOW CAN WE HELP YOU?</div>
 
-    <div class="ContactDetails">kdhjshkdfhjshkfh</div>
-  
+      <div class="TextinputName">
+        <label for="fname" class="Label">Name</label><br />
+        <input type="text" class="Field" />
+      </div>
+
+      <div class="TextinputNumber">
+        <label for="fname" class="Label">Contact number</label><br />
+        <input type="text" class="Field" />
+      </div>
+
+      <div class="TextinputEmail">
+        <label for="fname" class="Label">Email address</label><br />
+        <input type="text" class="Field" />
+      </div>
+
+      <div class="TextinputHelp">
+        <label for="fname" class="Label">How can we help you?</label><br />
+        <textarea type="text" class="FieldText" />
+      </div>
+
+      <button type="button" class="SubmitBtn">Contact us</button>
+    </div>
   </div>
 
   <div class="Empty"></div>
@@ -86,6 +108,71 @@ export default {
     left: 732px;
     width: 588px;
     height: 738px;
+
+    .heading {
+      margin-top: 60px;
+      margin-left: 40px;
+      height: 36px;
+      text-align: left;
+      font: normal normal bold 32px/38px Proxima Nova;
+      letter-spacing: 1.28px;
+      color: #ffffff;
+      text-transform: uppercase;
+      opacity: 0.87;
+    }
+    .TextinputName {
+      margin-top: 24px;
+    }
+    .TextinputNumber {
+      margin-top: 58px;
+    }
+    .TextinputEmail {
+      margin-top: 38px;
+    }
+    .TextinputHelp {
+      margin-top: 38px;
+    }
+
+    .Label {
+      margin-left: 40px;
+      width: 43px;
+      height: 18px;
+      text-align: left;
+      font: normal normal medium 14px/18px Montserrat;
+      letter-spacing: 0px;
+      color: #ffffff;
+      opacity: 0.87;
+    }
+
+    .Field {
+      margin-top: 4px;
+      margin-left: 41px;
+      width: 507px;
+      height: 50px;
+      border: 1px solid #ffffffde;
+      opacity: 0.87;
+      background-color: #171b1e;
+    }
+
+    .FieldText {
+      margin-top: 4px;
+      margin-left: 41px;
+      width: 507px;
+      height: 172px;
+      background: var(--black-high-) 0% 0% no-repeat padding-box;
+      background: #171b1e 0% 0% no-repeat padding-box;
+      border: 1px solid #ffffff;
+      opacity: 1;
+    }
+
+    .SubmitBtn {
+      margin-top: 32px;
+      margin-left: 40px;
+      width: 156px;
+      height: 48px;
+      background: #ff00504d 0% 0% no-repeat padding-box;
+      border: 2px solid #ff0050;
+    }
   }
 }
 
