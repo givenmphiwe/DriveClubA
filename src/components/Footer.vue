@@ -10,8 +10,7 @@
         MODELS
         <ul>
           <li>
-            <router-link class="link" :to="{ name: 'Home' }"
-              >la ferrari</router-link
+            <router-link class="link" :to="{ name: '' }">la ferrari</router-link
             >
           </li>
           <li>
@@ -27,7 +26,7 @@
             <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
           </li>
           <li>
-            <router-link class="link" :to="{ name: '' }"
+            <router-link class="link" :to="{ name: 'Contact' }"
               >Contact us</router-link
             >
           </li>
@@ -50,6 +49,7 @@ export default {};
 
 <style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css?family=Proxima+Nova");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
 
 .footer {
   top: 1603px;

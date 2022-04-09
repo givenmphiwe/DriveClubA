@@ -10,7 +10,7 @@
           <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
         </li>
         <li>
-          <router-link class="link" :to="{ name: '' }">Contact us</router-link>
+          <router-link class="link" :to="{ name: 'Contact' }">Contact us</router-link>
         </li>
       </ul>
 
@@ -85,6 +85,7 @@ export default {
 
 <style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css?family=Proxima+Nova");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
 
 header {
   //background-color: rgba(0,0,0,0.8);
@@ -111,8 +112,7 @@ header {
       text-align: center;
       font: normal normal 300 16px/22px Poppins;
       letter-spacing: 0.64px;
-      color: #ffffff;
-      color: #fff;
+      color: #FFFFFF;
       list-style: none;
       text-decoration: none;
     }
@@ -124,14 +124,14 @@ header {
     }
 
     .link {
-      font-size: 14px;
+      //font-size: 14px;
       transition: 0.5s ease all;
       padding-bottom: 4px;
       border-bottom: 1 pc solid transparent;
 
       &:hover {
-        color: red;
-        border-color: red;
+        color: #ff0050;
+        border-color: #ff0050;
       }
     }
 

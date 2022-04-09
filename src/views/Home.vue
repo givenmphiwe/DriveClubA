@@ -6,7 +6,7 @@
     <div class="goosebumps">GOOSEBUMPS</div>
     <div class="come">COME STANDARD</div>
     <div class="discover">
-      Discover the benefits of DRIVECLUB Trade-in an get a free vehicle
+      Discover the benefits of DRIVECLUB Trade-in and get a free vehicle
       evaluation
     </div>
 
@@ -14,14 +14,17 @@
   </div>
 
   <div class="ferrari">
+    <div class="image">
     <img src="../assets/car-1.jpg" />
-
+    </div>
     <div class="vertical-line"></div>
 
-    <div class="La-fer">LA FERR</div>
+    <div class="La-fer">LA FER</div>
     <div class="new">new range</div>
     <div class="La-fer2">LA FERRARI</div>
-    <div class="learn">Learn more</div>
+    <div>
+      <router-link class="learn" :to="{ name: '' }">Learn more</router-link>
+    </div>
   </div>
 
   <div class="models">
@@ -32,7 +35,9 @@
     <div class="Model">MODEL</div>
     <div class="new">new range</div>
     <div class="models">MODEL S</div>
-    <div class="learn">Learn more</div>
+    <div>
+      <router-link class="learn" :to="{ name: '' }">Learn more</router-link>
+    </div>
   </div>
   <div type="footer">
     <Footer/>
@@ -52,6 +57,8 @@ export default {
 
 <style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css?family=Proxima+Nova");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
 .hero {
   background-attachment: fixed;
   position: relative;
@@ -117,8 +124,8 @@ export default {
   margin-top: 2px;
   height: 501px;
   width: 1438px;
-  background-color: #14171a;
-
+  background-color: #161B1E;
+  
   img {
     position: absolute;
     left: 630px;
@@ -126,25 +133,31 @@ export default {
     height: 501px;
     margin-left: 2px;
     /* UI Properties */
-    background: #161b1e 0% 0% no-repeat padding-box;
     opacity: 0.4;
+    transition: 0.6s ease;
+
+    &:hover{
+      transform: scale(1.2);
+    }
+  
   }
+  
 
   .La-fer {
     position: relative;
     top: 103px;
     left: 0.000034332275390625px;
-    width: 630px;
-    height: 112px;
-    background: #14171a 0% 0% no-repeat padding-box;
-    opacity: 1;
-    font: normal normal 800 96px/75px Proxima Nova;
-    letter-spacing: 5.12px;
+    //width: 630px;
+    color: #14171A;
+    font: normal normal  Proxima Nova;
+    font-size: 10em;
+    font-weight: bolder;
+    letter-spacing: 2.12px;
   }
 
   .new {
-    top: 189px;
-    left: 140px;
+    margin-top: 20px;
+    margin-left: 140px;
     //width: 108px;
     height: 21px;
     text-align: left;
@@ -156,8 +169,8 @@ export default {
   }
 
   .La-fer2 {
-    top: 208px;
-    left: 140px;
+    margin-top: 21px;
+    margin-left: 140px;
     height: 64px;
     text-align: left;
     font: normal normal 800 56px/75px Proxima Nova;
@@ -167,14 +180,13 @@ export default {
     opacity: 0.87;
   }
 
-  .learn {
-    position: absolute;
-    top: 892px;
-    left: 140px;
+  .learn {  
+    top: 20px;
+    margin-left: 140px;
     width: 101px;
     height: 23px;
-    color: var(--unnamed-color-ff0050);
     text-align: left;
+    text-decoration: none;
     font: normal normal normal 16px/25px Poppins;
     letter-spacing: 0.64px;
     color: #ff0050;
@@ -192,7 +204,7 @@ export default {
   margin-top: 2px;
   height: 501px;
   width: 1438px;
-  background-color: #14171a;
+  background-color: #161B1E;
 
   img {
     position: absolute;
@@ -201,24 +213,30 @@ export default {
     height: 501px;
     margin-left: 2px;
     /* UI Properties */
-    background: #161b1e 0% 0% no-repeat padding-box;
     opacity: 0.4;
+    transition: 0.6s ease;
+
+    &:hover{
+      transform: scale(1.2);
+    }
   }
+  
 
   .Model {
     position: relative;
     top: 101px;
     margin-left: 812px;
-    height: 112px;
     opacity: 1;
-    font: normal normal 800 96px/75px Proxima Nova;
+    color: #14171A;
+    font: normal normal  Proxima Nova;
+    font-size: 10em;
+    font-weight: bolder;
     letter-spacing: 5.12px;
   }
 
   .new {
-    top: 187px;
+    margin-top: 20px;
     margin-left: 976px;
-    //width: 108px;
     height: 21px;
     text-align: left;
     font: normal normal normal 18px/75px Proxima Nova;
@@ -229,7 +247,7 @@ export default {
   }
 
   .models {
-    top: 208px;
+    margin-top: 21px;
     margin-left: 976px;
     width: 250px;
     height: 64px;
@@ -240,11 +258,11 @@ export default {
   }
 
   .learn {
-    top: 292.5px;
+    margin-top: 20px;
     margin-left: 976px;
     width: 101px;
     height: 23px;
-
+    text-decoration: none;
     font: normal normal normal 16px/25px Poppins;
     letter-spacing: 0.64px;
     color: #ff0050;
