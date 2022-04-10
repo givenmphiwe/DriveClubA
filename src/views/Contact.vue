@@ -8,17 +8,26 @@
   </div>
 
   <div class="ContactData">
+    
     <div class="ContactIcon">
       <div class="PhoneIcon">
         <i
           class="fa fa-phone fa-rotate-90"
           style="color: #ffffff; margin: 15px 15px 15px 15px"
         ></i>
+        <div class="triangleB"></div>
+        <div class="triangleT"></div>
       </div>
 
       <div class="details">
         <p class="d">Phone</p>
-        <p>082 000 0000</p>
+        <p class="N">082 000 0000</p>
+
+        <p class="d">Email</p>
+        <p class="N">email@example.com</p>
+
+        <p class="d">Location</p>
+        <p class="N">42 Business RD</p>
       </div>
 
       <div class="SendIcon">
@@ -26,11 +35,8 @@
           class="fa fa-paper-plane"
           style="color: #ffffff; margin: 15px 15px 15px 15px"
         ></i>
-      </div>
-
-      <div class="detailEmail">
-        <p class="d">Email</p>
-        <p>email@example.com</p>
+        <div class="triangleB"></div>
+        <div class="triangleT"></div>
       </div>
 
       <div class="LocationIcon">
@@ -38,38 +44,57 @@
           class="fa fa-map-marker"
           style="color: #ffffff; margin: 15px 15px 15px 15px"
         ></i>
-      </div>
-
-      <div class="detailLocation ">
-        <p class="d">Location</p>
-        <p>42 Business RD</p>
+        <div class="triangleB"></div>
+        <div class="triangleT"></div>
       </div>
     </div>
 
     <div class="ContactDetails">
       <div class="heading">HOW CAN WE HELP YOU?</div>
 
-      <div class="TextinputName">
+      <div class="TextinputName" data-error="Please try again">
         <label for="fname" class="Label">Name</label><br />
-        <input type="text" class="Field" />
+        <input type="text" class="Field" v-model="state.Name" />
+        <span class="Err" v-if="v$.Name.$error">
+          {{ v$.Name.$errors[0].$message }}
+        </span>
       </div>
 
       <div class="TextinputNumber">
+
         <label for="fname" class="Label">Contact number</label><br />
-        <input type="text" class="Field" />
+        <input type="text" class="Field" v-model="state.number" />
+
+        <span class="Err2" v-if="v$.number.$error">
+          {{ v$.number.$errors[0].$message }}
+        </span>
       </div>
 
       <div class="TextinputEmail">
         <label for="fname" class="Label">Email address</label><br />
-        <input type="text" class="Field" />
+        <input type="text" class="Field" v-model="state.email" />
+
+        <span class="Err3" v-if="v$.email.$error">
+          {{ v$.email.$errors[0].$message }}
+        </span>
       </div>
 
       <div class="TextinputHelp">
         <label for="fname" class="Label">How can we help you?</label><br />
-        <textarea type="text" class="FieldText" />
+        <textarea type="text" class="FieldText" v-model="state.help" />
+        
+        <span class="Err4" v-if="v$.help.$error">
+          {{ v$.help.$errors[0].$message }}
+        </span>
       </div>
 
-      <button type="button" class="SubmitBtn">Contact us</button>
+      <div class="triangleT"></div>
+      <div class="triangleB"></div>
+      
+      <button type="button" @click="submitForm" class="SubmitBtn">
+        Submit
+      </button>
+
     </div>
   </div>
 
@@ -84,9 +109,46 @@
 // @ is an alias to /src
 import Navigation from "../components/Navigation.vue";
 import Footer from "../components/Footer.vue";
+
+import useValidate from "@vuelidate/core";
+import { required, email, helpers } from "@vuelidate/validators";
+import { reactive, computed } from "vue";
+
 export default {
   name: "Contact",
   components: { Navigation, Footer },
+
+  setup() {
+    const state = reactive({
+      Name: "",
+      number: "",
+      email: "",
+      help: "",
+    });
+
+    const Err = (value) => value.includes("vue");
+
+    const rules = computed(() => {
+      return {
+        Name: { required: helpers.withMessage("Please try again", Err) },
+        email: {
+          required, email, Err: helpers.withMessage("Please try again", Err),
+        },
+        number: { required: helpers.withMessage("Please try again", Err) },
+        help: { required: helpers.withMessage("Please try again", Err) },
+      };
+    });
+
+    const v$ = useValidate(rules, state);
+
+    return { state, v$ };
+  },
+
+  methods: {
+    submitForm() {
+      this.v$.$validate(); // checks all inputs
+    },
+  },
 };
 </script>
 
@@ -140,9 +202,9 @@ export default {
   .details {
     position: absolute;
     left: 208px;
-    top: 102px;
+    top: 500px;
   }
-  
+
   .d {
     width: 58px;
     height: 25px;
@@ -151,6 +213,17 @@ export default {
     letter-spacing: 0.36px;
     color: #ffffff;
     opacity: 0.87;
+    margin-bottom: 2px;
+  }
+
+  .N {
+    height: 25px;
+    text-align: left;
+    font: normal normal 300 18px/21px Poppins;
+    letter-spacing: 0.36px;
+    color: #ffffff;
+    opacity: 0.6;
+    margin-bottom: 38px;
   }
   .PhoneIcon {
     width: 48px;
@@ -159,6 +232,25 @@ export default {
     background: #ff00504d 0% 0% no-repeat padding-box;
     border: 2px solid #ff0050;
     opacity: 1;
+
+    .triangleB {
+      position: absolute;
+      top: 537px;
+      width: 11px;
+      height: 11px;
+      border-bottom: 11px solid #ff0050;
+      border-right: 11px solid transparent;
+    }
+
+    .triangleT {
+      position: absolute;
+      top: 502px;
+      left: 177px;
+      width: 11px;
+      height: 11px;
+      border-top: 11px solid #ff0050;
+      border-left: 11px solid transparent;
+    }
   }
 
   .SendIcon {
@@ -169,6 +261,25 @@ export default {
     background: #ff00504d 0% 0% no-repeat padding-box;
     border: 2px solid #ff0050;
     opacity: 1;
+
+    .triangleB {
+      position: absolute;
+      top: 625px;
+      width: 11px;
+      height: 11px;
+      border-bottom: 11px solid #ff0050;
+      border-right: 11px solid transparent;
+    }
+
+    .triangleT {
+      position: absolute;
+      top: 590px;
+      left: 177px;
+      width: 11px;
+      height: 11px;
+      border-top: 11px solid #ff0050;
+      border-left: 11px solid transparent;
+    }
   }
 
   .LocationIcon {
@@ -179,6 +290,25 @@ export default {
     background: #ff00504d 0% 0% no-repeat padding-box;
     border: 2px solid #ff0050;
     opacity: 1;
+
+    .triangleB {
+      position: absolute;
+      top: 713px;
+      width: 11px;
+      height: 11px;
+      border-bottom: 11px solid #ff0050;
+      border-right: 11px solid transparent;
+    }
+
+    .triangleT {
+      position: absolute;
+      top: 678px;
+      left: 177px;
+      width: 11px;
+      height: 11px;
+      border-top: 11px solid #ff0050;
+      border-left: 11px solid transparent;
+    }
   }
 }
 
@@ -212,20 +342,20 @@ export default {
     .TextinputName {
       margin-top: 24px;
     }
+
     .TextinputNumber {
-      margin-top: 38px;
+      margin-top: 16px;
     }
     .TextinputEmail {
-      margin-top: 38px;
+      margin-top: 16px;
     }
     .TextinputHelp {
-      margin-top: 38px;
+      margin-top: 16px;
     }
 
     .Label {
       margin-left: 40px;
       width: 43px;
-      height: 18px;
       text-align: left;
       font: normal normal medium 14px/18px Montserrat;
       letter-spacing: 0px;
@@ -240,6 +370,7 @@ export default {
       height: 50px;
       border: 1px solid #ffffffde;
       opacity: 0.87;
+      color: #fff;
       background-color: #171b1e;
     }
 
@@ -253,6 +384,68 @@ export default {
       border: 1px solid #ffffff;
       opacity: 1;
     }
+    .Err {
+      position: absolute;
+      top: 182px;
+      left: 40px;
+      letter-spacing: 0.56px;
+      font: normal normal 300 14px/38px Proxima Nova;
+      //width: 104px;
+      height: 16px;
+      color: #ff4e00;
+      opacity: 1;
+    }
+
+    .Err2 {
+      position: absolute;
+      top: 270px;
+      left: 40px;
+      letter-spacing: 0.56px;
+      font: normal normal 300 14px/38px Proxima Nova;
+      height: 16px;
+      color: #ff4e00;
+      opacity: 1;
+    }
+    .Err3 {
+      position: absolute;
+      top: 357px;
+      left: 40px;
+      letter-spacing: 0.56px;
+      font: normal normal 300 14px/38px Proxima Nova;
+      height: 16px;
+      color: #ff4e00;
+      opacity: 1;
+    }
+    .Err4 {
+      position: absolute;
+      top: 571px;
+      left: 40px;
+      letter-spacing: 0.56px;
+      font: normal normal 300 14px/38px Proxima Nova;
+      height: 16px;
+      color: #ff4e00;
+      opacity: 1;
+    }
+
+    .triangleB {
+      position: absolute;
+      top: 650px;
+      left: 40px;
+      width: 11px;
+      height: 11px;
+      border-bottom: 11px solid #ff0050;
+      border-right: 11px solid transparent;
+    }
+
+    .triangleT {
+      position: absolute;
+      top: 615px;
+      left: 185px;
+      width: 11px;
+      height: 11px;
+      border-top: 11px solid #ff0050;
+      border-left: 11px solid transparent;
+    }
 
     .SubmitBtn {
       margin-top: 32px;
@@ -261,6 +454,16 @@ export default {
       height: 48px;
       background: #ff00504d 0% 0% no-repeat padding-box;
       border: 2px solid #ff0050;
+      text-align: center;
+      font: normal normal medium 18px/21px Poppins;
+      letter-spacing: 0.36px;
+      color: #ffffff;
+      opacity: 1;
+
+      &:hover {
+        background-color: #ff0050;
+        cursor: pointer;
+      }
     }
   }
 }

@@ -10,54 +10,65 @@
       evaluation
     </div>
 
-    <button type="button" class="Contact-btn">Contact us</button>
+    <router-link :to="{ name: 'Contact' }">
+      <div class="Contact-btn">
+        <p class="Contact-us">Contact us</p>
+        <div class="triangleTop"></div>
+        <div class="triangleBottom"></div>
+      </div>
+    </router-link>
+
+    <!----button type="button" to="/Contact" class="Contact-btn">Contact us</button------>
   </div>
 
   <div class="ferrari">
     <div class="image">
-    <img src="../assets/car-1.jpg" />
+      <img src="../assets/car-1.jpg" />
     </div>
-    <div class="vertical-line"></div>
 
-    <div class="La-fer">LA FER</div>
+    <div class="La-fer">LA FERR</div>
     <div class="new">new range</div>
     <div class="La-fer2">LA FERRARI</div>
     <div>
-      <router-link class="learn" :to="{ name: '' }">Learn more</router-link>
+      <router-link class="learn" :to="{ name: 'LearnMore' }"
+        >Learn more</router-link
+      >
     </div>
   </div>
 
   <div class="models">
-    <img src="../assets/car-2.jpg" />
-
-    <div class="vertical-line"></div>
+    <div class="image">
+      <img src="../assets/car-2.jpg" />
+    </div>
 
     <div class="Model">MODEL</div>
     <div class="new">new range</div>
-    <div class="models">MODEL S</div>
+    <div class="modelS">MODEL S</div>
     <div>
-      <router-link class="learn" :to="{ name: '' }">Learn more</router-link>
+      <router-link class="learn" :to="{ name: 'LearnMore' }"
+        >Learn more</router-link
+      >
     </div>
   </div>
   <div type="footer">
-    <Footer/>
+    <Footer />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import Navigation from "../components/Navigation.vue";
-import Footer from "../components/Footer.vue"
+import Footer from "../components/Footer.vue";
+
 export default {
   name: "Home",
-  components: { Navigation,Footer },
-  
+  components: { Navigation, Footer },
 };
 </script>
 
 <style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css?family=Proxima+Nova");
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
 
 .hero {
   background-attachment: fixed;
@@ -70,6 +81,12 @@ export default {
     height: 100%;
     width: 100%;
   }
+  @media (max-width: 414px) {
+    .img {
+      width: 414px;
+      height: 598px;
+    }
+  }
 
   .goosebumps {
     position: absolute;
@@ -80,6 +97,20 @@ export default {
     font: normal normal 800 80px/75px Proxima Nova;
     letter-spacing: 1.6px;
     color: #ffffff;
+  }
+  @media screen and (max-width: 414px) {
+    .goosebumps {
+      top: 185px;
+      left: 32px;
+      width: 344px;
+      height: 54px;
+      text-align: left;
+      font: normal normal 800 48px/75px Proxima Nova;
+      letter-spacing: 0.96px;
+      color: #ffffff;
+      text-transform: uppercase;
+      opacity: 0.87;
+    }
   }
 
   .come {
@@ -107,6 +138,25 @@ export default {
     color: #ffffff;
     opacity: 0.6;
   }
+  .triangleBottom {
+    position: absolute;
+    top: 34px;
+    left: 0px;
+    width: 11px;
+    height: 11px;
+    border-bottom: 11px solid #ff0050;
+    border-right: 11px solid transparent;
+  }
+
+  .triangleTop {
+    position: absolute;
+    top: 0px;
+    left: 142px;
+    width: 11px;
+    height: 11px;
+    border-top: 11px solid #ff0050;
+    border-left: 11px solid transparent;
+  }
   .Contact-btn {
     position: absolute;
     top: 419px;
@@ -117,46 +167,67 @@ export default {
     background: #ff00504d 0% 0% no-repeat padding-box;
     border: 2px solid #ff0050;
     opacity: 1;
+    text-decoration: none;
+    &:hover {
+      background-color: #ff0050;
+    }
+
+    .Contact-us {
+      margin-top: 12px;
+      text-align: center;
+      font: normal normal medium 18px/21px Poppins;
+      letter-spacing: 0.36px;
+      color: #ffffff;
+      opacity: 1;
+
+      &:hover {
+        background-color: #ff0050;
+      }
+    }
   }
 }
 
 .ferrari {
-  margin-top: 2px;
   height: 501px;
   width: 1438px;
-  background-color: #161B1E;
-  
-  img {
+  background-color: #161b1e;
+  border-bottom: 2px solid white;
+  border-top: 2px solid white;
+
+  .image {
     position: absolute;
     left: 630px;
     width: 810px;
-    height: 501px;
-    margin-left: 2px;
-    /* UI Properties */
-    opacity: 0.4;
-    transition: 0.6s ease;
+    height: 499px;
+    //margin-left: 2px;
+    border-left: 2px solid white;
 
-    &:hover{
-      transform: scale(1.2);
+    img {
+      position: relative;
+      height: 500px;
+      /* UI Properties */
+      opacity: 0.4;
+      transition: 0.6s ease;
+
+      &:hover {
+        transform: scale(1.2);
+      }
     }
-  
   }
-  
 
   .La-fer {
-    position: relative;
-    top: 103px;
-    left: 0.000034332275390625px;
-    //width: 630px;
-    color: #14171A;
-    font: normal normal  Proxima Nova;
+    margin-top: 103px;
+    //left: 0.000034332275390625px;
+    color: #14171a;
+    font: normal normal Proxima Nova;
     font-size: 10em;
     font-weight: bolder;
     letter-spacing: 2.12px;
   }
 
   .new {
-    margin-top: 20px;
+    position: absolute;
+    top: 787px;
     margin-left: 140px;
     //width: 108px;
     height: 21px;
@@ -169,7 +240,8 @@ export default {
   }
 
   .La-fer2 {
-    margin-top: 21px;
+    position: absolute;
+    top: 830px;
     margin-left: 140px;
     height: 64px;
     text-align: left;
@@ -180,7 +252,7 @@ export default {
     opacity: 0.87;
   }
 
-  .learn {  
+  .learn {
     top: 20px;
     margin-left: 140px;
     width: 101px;
@@ -201,34 +273,37 @@ export default {
 }
 
 .models {
-  margin-top: 2px;
   height: 501px;
   width: 1438px;
-  background-color: #161B1E;
+  background-color: #161b1e;
+  border-bottom: 2px solid white;
 
-  img {
+  .image {
     position: absolute;
-    left: 0px;
-    width: 810px;
-    height: 501px;
+    border-right: 2px solid white;
+    height: 499px;
     margin-left: 2px;
-    /* UI Properties */
-    opacity: 0.4;
-    transition: 0.6s ease;
 
-    &:hover{
-      transform: scale(1.2);
+    img {
+      position: relative;
+      width: 810px;
+      height: 501px;
+      /* UI Properties */
+      opacity: 0.4;
+      transition: 0.6s ease;
+
+      &:hover {
+        transform: scale(1.2);
+      }
     }
   }
-  
-
   .Model {
     position: relative;
     top: 101px;
     margin-left: 812px;
     opacity: 1;
-    color: #14171A;
-    font: normal normal  Proxima Nova;
+    color: #14171a;
+    font: normal normal Proxima Nova;
     font-size: 10em;
     font-weight: bolder;
     letter-spacing: 5.12px;
@@ -246,7 +321,7 @@ export default {
     opacity: 0.6;
   }
 
-  .models {
+  .modelS {
     margin-top: 21px;
     margin-left: 976px;
     width: 250px;
@@ -267,12 +342,6 @@ export default {
     letter-spacing: 0.64px;
     color: #ff0050;
     opacity: 1;
-  }
-  .vertical-line {
-    position: absolute;
-    left: 810px;
-    border-left: 2px solid white;
-    height: 500px;
   }
 }
 </style>

@@ -106,7 +106,7 @@ header {
     @media (min-width: 1140px) {
       max-width: 1140px;
     }
-
+//1140px
     ul,
     .link {
       text-align: center;
