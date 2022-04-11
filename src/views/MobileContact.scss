@@ -1,0 +1,318 @@
+.support {
+    background-attachment: fixed;
+    position: relative;
+    width: 1438px;
+    height: 398px;
+  
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+  
+    .contact {
+      position: absolute;
+      top: 172px;
+      left: 140px;
+      width: 714px;
+      height: 91px;
+      font: normal normal 800 80px/75px Proxima Nova;
+      letter-spacing: 1.6px;
+      color: #ffffff;
+    }
+  
+    .call {
+      position: absolute;
+      top: 259px;
+      left: 140px;
+      height: 45px;
+      /* UI Properties */
+      font: normal normal 800 40px/38px Proxima Nova;
+      letter-spacing: 1.6px;
+      color: #ffffff;
+      text-transform: uppercase;
+      opacity: 0.87;
+      -webkit-text-stroke: 3px #fff;
+    }
+  }
+  .ContactIcon {
+    margin-top: 102px;
+    margin-left: 140px;
+    width: 264px;
+    height: 228px;
+  
+    .details {
+      position: absolute;
+      left: 208px;
+      top: 500px;
+    }
+  
+    .d {
+      width: 58px;
+      height: 25px;
+      text-align: left;
+      font: normal normal medium 18px/21px Poppins;
+      letter-spacing: 0.36px;
+      color: #ffffff;
+      opacity: 0.87;
+      margin-bottom: 2px;
+    }
+  
+    .N {
+      height: 25px;
+      text-align: left;
+      font: normal normal 300 18px/21px Poppins;
+      letter-spacing: 0.36px;
+      color: #ffffff;
+      opacity: 0.6;
+      margin-bottom: 38px;
+    }
+    .PhoneIcon {
+      width: 48px;
+      height: 48px;
+      border: 2px solid #ff0050;
+      background: #ff00504d 0% 0% no-repeat padding-box;
+      border: 2px solid #ff0050;
+      opacity: 1;
+  
+      .triangleB {
+        position: absolute;
+        top: 537px;
+        width: 11px;
+        height: 11px;
+        border-bottom: 11px solid #ff0050;
+        border-right: 11px solid transparent;
+      }
+  
+      .triangleT {
+        position: absolute;
+        top: 502px;
+        left: 177px;
+        width: 11px;
+        height: 11px;
+        border-top: 11px solid #ff0050;
+        border-left: 11px solid transparent;
+      }
+    }
+  
+    .SendIcon {
+      margin-top: 40px;
+      width: 48px;
+      height: 48px;
+      border: 2px solid #ff0050;
+      background: #ff00504d 0% 0% no-repeat padding-box;
+      border: 2px solid #ff0050;
+      opacity: 1;
+  
+      .triangleB {
+        position: absolute;
+        top: 625px;
+        width: 11px;
+        height: 11px;
+        border-bottom: 11px solid #ff0050;
+        border-right: 11px solid transparent;
+      }
+  
+      .triangleT {
+        position: absolute;
+        top: 590px;
+        left: 177px;
+        width: 11px;
+        height: 11px;
+        border-top: 11px solid #ff0050;
+        border-left: 11px solid transparent;
+      }
+    }
+  
+    .LocationIcon {
+      margin-top: 40px;
+      width: 48px;
+      height: 48px;
+      border: 2px solid #ff0050;
+      background: #ff00504d 0% 0% no-repeat padding-box;
+      border: 2px solid #ff0050;
+      opacity: 1;
+  
+      .triangleB {
+        position: absolute;
+        top: 713px;
+        width: 11px;
+        height: 11px;
+        border-bottom: 11px solid #ff0050;
+        border-right: 11px solid transparent;
+      }
+  
+      .triangleT {
+        position: absolute;
+        top: 678px;
+        left: 177px;
+        width: 11px;
+        height: 11px;
+        border-top: 11px solid #ff0050;
+        border-left: 11px solid transparent;
+      }
+    }
+  }
+  
+  .ContactData {
+    height: 430px;
+    width: 1438px;
+    background-color: #171b1e;
+    border-bottom: 2px solid white;
+    border-top: 2px solid white;
+  
+    .ContactDetails {
+      position: absolute;
+      background-color: #171b1e;
+      border: 2px solid white;
+      top: 322px;
+      left: 732px;
+      width: 588px;
+      height: 748px;
+  
+      .heading {
+        margin-top: 60px;
+        margin-left: 40px;
+        height: 36px;
+        text-align: left;
+        font: normal normal bold 32px/38px Proxima Nova;
+        letter-spacing: 1.28px;
+        color: #ffffff;
+        text-transform: uppercase;
+        opacity: 0.87;
+      }
+      .TextinputName {
+        margin-top: 24px;
+      }
+  
+      .TextinputNumber {
+        margin-top: 16px;
+      }
+      .TextinputEmail {
+        margin-top: 16px;
+      }
+      .TextinputHelp {
+        margin-top: 16px;
+      }
+  
+      .Label {
+        margin-left: 40px;
+        width: 43px;
+        text-align: left;
+        font: normal normal medium 14px/18px Montserrat;
+        letter-spacing: 0px;
+        color: #ffffff;
+        opacity: 0.87;
+      }
+  
+      .Field {
+        margin-top: 4px;
+        margin-left: 41px;
+        width: 507px;
+        height: 50px;
+        border: 1px solid #ffffffde;
+        opacity: 0.87;
+        color: #fff;
+        background-color: #171b1e;
+      }
+  
+      .FieldText {
+        margin-top: 4px;
+        margin-left: 41px;
+        width: 507px;
+        height: 172px;
+        background: var(--black-high-) 0% 0% no-repeat padding-box;
+        background: #171b1e 0% 0% no-repeat padding-box;
+        border: 1px solid #ffffff;
+        opacity: 1;
+      }
+      .Err {
+        position: absolute;
+        top: 182px;
+        left: 40px;
+        letter-spacing: 0.56px;
+        font: normal normal 300 14px/38px Proxima Nova;
+        //width: 104px;
+        height: 16px;
+        color: #ff4e00;
+        opacity: 1;
+      }
+  
+      .Err2 {
+        position: absolute;
+        top: 270px;
+        left: 40px;
+        letter-spacing: 0.56px;
+        font: normal normal 300 14px/38px Proxima Nova;
+        height: 16px;
+        color: #ff4e00;
+        opacity: 1;
+      }
+      .Err3 {
+        position: absolute;
+        top: 357px;
+        left: 40px;
+        letter-spacing: 0.56px;
+        font: normal normal 300 14px/38px Proxima Nova;
+        height: 16px;
+        color: #ff4e00;
+        opacity: 1;
+      }
+      .Err4 {
+        position: absolute;
+        top: 571px;
+        left: 40px;
+        letter-spacing: 0.56px;
+        font: normal normal 300 14px/38px Proxima Nova;
+        height: 16px;
+        color: #ff4e00;
+        opacity: 1;
+      }
+  
+      .triangleB {
+        position: absolute;
+        top: 650px;
+        left: 40px;
+        width: 11px;
+        height: 11px;
+        border-bottom: 11px solid #ff0050;
+        border-right: 11px solid transparent;
+      }
+  
+      .triangleT {
+        position: absolute;
+        top: 615px;
+        left: 185px;
+        width: 11px;
+        height: 11px;
+        border-top: 11px solid #ff0050;
+        border-left: 11px solid transparent;
+      }
+  
+      .SubmitBtn {
+        margin-top: 32px;
+        margin-left: 40px;
+        width: 156px;
+        height: 48px;
+        background: #ff00504d 0% 0% no-repeat padding-box;
+        border: 2px solid #ff0050;
+        text-align: center;
+        font: normal normal medium 18px/21px Poppins;
+        letter-spacing: 0.36px;
+        color: #ffffff;
+        opacity: 1;
+  
+        &:hover {
+          background-color: #ff0050;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  
+  .Empty {
+    height: 618px;
+    width: 1438px;
+    background-color: #171b1e;
+    border-bottom: 2px solid white;
+  }

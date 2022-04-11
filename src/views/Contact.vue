@@ -1,13 +1,14 @@
 <template>
-  <div class="support">
+  
     <Navigation />
+  <div v-show="!mobile" class="support">
     <img src="../assets/hero-home.jpg" />
 
     <div class="contact">CONTACT US</div>
     <div class="call">24/7 SUPPORT</div>
   </div>
 
-  <div class="ContactData">
+  <div v-show="!mobile" class="ContactData">
     
     <div class="ContactIcon">
       <div class="PhoneIcon">
@@ -98,7 +99,7 @@
     </div>
   </div>
 
-  <div class="Empty"></div>
+  <div v-show="!mobile" class="Empty"></div>
 
   <div type="footer">
     <Footer />
@@ -118,6 +119,20 @@ export default {
   name: "Contact",
   components: { Navigation, Footer },
 
+data() {
+    return {
+      scrolledNav: null,
+      mobile: null,
+      mobileNav: null,
+      windowWidth: null,
+    };
+  },
+  created() {
+    window.addEventListener("resize", this.checkScreen);
+    this.checkScreen;
+  },
+ 
+//Checking the empty input fields
   setup() {
     const state = reactive({
       Name: "",
@@ -148,6 +163,29 @@ export default {
     submitForm() {
       this.v$.$validate(); // checks all inputs
     },
+    toggleMobileNav() {
+      this.mobileNav = !this.mobileNav;
+    },
+
+    updateScroll() {
+      const scrollPosition = window.scrollY;
+      if (scrollPosition > 50) {
+        this.scrolledNav = true;
+        return;
+      }
+      this.scrolledNav = false;
+    },
+
+    checkScreen() {
+      this.windowWidth = window.innerWidth;
+      if (this.windowWidth <= 750) {
+        this.mobile = true;
+        return;
+      }
+      this.mobile = false;
+      this.mobileNav = false;
+      return;
+    },
   },
 };
 </script>
@@ -155,6 +193,7 @@ export default {
 <style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css?family=Proxima+Nova");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+@import '@/views/MobileContact.scss';
 
 .support {
   background-attachment: fixed;
