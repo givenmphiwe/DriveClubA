@@ -162,7 +162,7 @@ export default {
 <style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css?family=Proxima+Nova");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
-@import "@/views/MobileStyle.scss";
+@import "@/views/MobileHStyle.scss";
 
 .hero {
   background-attachment: fixed;

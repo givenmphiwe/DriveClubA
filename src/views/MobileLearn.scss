@@ -1,0 +1,50 @@
+.Mobile-LearnPage {
+  background: #171b1e;
+  width: 414px;
+  height: 432px;
+
+  img {
+    width: 414px;
+    height: 432px;
+    background: #161b1e 0% 0% no-repeat padding-box;
+  }
+}
+
+.Details {
+  background: #171b1e;
+  width: 414px;
+  height: 1269px;
+
+  .Mobile-NewRange {
+    position: relative;
+    top: 60px;
+    height: 21px;
+    text-align: left;
+    font: normal normal normal 18px/75px Proxima Nova;
+    letter-spacing: 0.72px;
+    color: #ffffff;
+    text-transform: uppercase;
+    opacity: 0.6;
+  }
+
+  .Mobile-LaFerr {
+    position: relative;
+    top: 80px;
+    text-align: left;
+    font: normal normal 800 56px/75px Proxima Nova;
+    letter-spacing: 1.12px;
+    color: #ffffff;
+    text-transform: uppercase;
+    opacity: 0.87;
+  }
+
+  .Mobile-lorem {
+    position: relative;
+    top: 160px;
+    text-align: left;
+    font: normal normal 300 18px/27px Poppins;
+    letter-spacing: 0.36px;
+    color: #ffffff;
+    opacity: 0.87;
+  }
+}
