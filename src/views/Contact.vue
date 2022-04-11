@@ -7,6 +7,69 @@
     <div class="contact">CONTACT US</div>
     <div class="call">24/7 SUPPORT</div>
   </div>
+  
+  
+
+  <!---Mobile--->
+  <div v-show="mobile" class="Mobile-support">
+    <img src="../assets/hero-home.jpg" />
+
+    <div class="Mobile-contact">CONTACT US</div>
+    <div class="Mobile-call">24/7 SUPPORT</div>
+  </div>
+
+  <div v-show="mobile" class="Mobile-ContactData">
+    <div v-show="mobile" class="Mobile-ContactData">
+     
+    <div class="Mobile-ContactDetails">
+      <div class="heading">HOW CAN WE HELP YOU?</div>
+
+      <div class="TextinputName" data-error="Please try again">
+        <label for="fname" class="Label">Name</label><br />
+        <input type="text" class="Field" v-model="state.Name" />
+        <span class="Err" v-if="v$.Name.$error">
+          {{ v$.Name.$errors[0].$message }}
+        </span>
+      </div>
+
+      <div class="TextinputNumber">
+
+        <label for="fname" class="Label">Contact number</label><br />
+        <input type="text" class="Field" v-model="state.number" />
+
+        <span class="Err2" v-if="v$.number.$error">
+          {{ v$.number.$errors[0].$message }}
+        </span>
+      </div>
+
+      <div class="TextinputEmail">
+        <label for="fname" class="Label">Email address</label><br />
+        <input type="text" class="Field" v-model="state.email" />
+
+        <span class="Err3" v-if="v$.email.$error">
+          {{ v$.email.$errors[0].$message }}
+        </span>
+      </div>
+
+      <div class="TextinputHelp">
+        <label for="fname" class="Label">How can we help you?</label><br />
+        <textarea type="text" class="FieldText" v-model="state.help" />
+        
+        <span class="Err4" v-if="v$.help.$error">
+          {{ v$.help.$errors[0].$message }}
+        </span>
+      </div>
+
+      <div class="triangleT"></div>
+      <div class="triangleB"></div>
+      
+      <button type="button" @click="submitForm" class="SubmitBtn">
+        Submit
+      </button>
+
+    </div>
+    </div>
+  </div>
 
   <div v-show="!mobile" class="ContactData">
     
@@ -99,7 +162,53 @@
     </div>
   </div>
 
+  <!----------->
+
+
   <div v-show="!mobile" class="Empty"></div>
+
+  <div v-show="mobile" class="Mobile-Empty">
+    <div class="Mobile-ContactIcon">
+      <div class="PhoneIcon">
+        <i
+          class="fa fa-phone fa-rotate-90"
+          style="color: #ffffff; margin: 15px 15px 15px 15px"
+        ></i>
+        <div class="triangleB"></div>
+        <div class="triangleT"></div>
+      </div>
+
+      <div class="details">
+        <p class="d">Phone</p>
+        <p class="N">082 000 0000</p>
+
+        <p class="d">Email</p>
+        <p class="N">email@example.com</p>
+
+        <p class="d">Location</p>
+        <p class="N">42 Business RD</p>
+      </div>
+
+      <div class="SendIcon">
+        <i
+          class="fa fa-paper-plane"
+          style="color: #ffffff; margin: 15px 15px 15px 15px"
+        ></i>
+        <div class="triangleB"></div>
+        <div class="triangleT"></div>
+      </div>
+
+      <div class="LocationIcon">
+        <i
+          class="fa fa-map-marker"
+          style="color: #ffffff; margin: 15px 15px 15px 15px"
+        ></i>
+        <div class="triangleB"></div>
+        <div class="triangleT"></div>
+      </div>
+    </div>
+  </div>
+  
 
   <div type="footer">
     <Footer />
