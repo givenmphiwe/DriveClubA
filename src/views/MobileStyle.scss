@@ -1,0 +1,176 @@
+.Mobile-hero {
+  background-attachment: fixed;
+  position: relative;
+  width: 750px;
+  height: 598px;
+
+  img {
+    object-fit: cover;
+    width: 750px;
+    height: 598px;
+  }
+
+  .Mobile-goosebumps {
+    position: absolute;
+    top: 185px;
+    left: 32px;
+    width: 344px;
+    height: 54px;
+    text-align: left;
+    font: normal normal 800 48px/75px Proxima Nova;
+    letter-spacing: 0.96px;
+    color: #ffffff;
+    text-transform: uppercase;
+    opacity: 0.87;
+  }
+
+  .Mobile-come {
+    position: absolute;
+    top: 235px;
+    left: 32px;
+    width: 252px;
+    height: 32px;
+    text-align: left;
+    font: normal normal 800 28px/38px Proxima Nova;
+    letter-spacing: 1.12px;
+    color: #ffffff;
+    text-transform: uppercase;
+    opacity: 0.87;
+  }
+
+  .Mobile-discover {
+    position: absolute;
+    top: 287px;
+    left: 32px;
+    width: 350px;
+    height: 38px;
+    text-align: left;
+    font: normal normal 300 14px/18px Poppins;
+    letter-spacing: 0.28px;
+    color: #ffffff;
+    opacity: 0.6;
+  }
+  .Mobile-triangleBottom {
+    position: absolute;
+    top: 34px;
+    left: 0px;
+    width: 11px;
+    height: 11px;
+    border-bottom: 11px solid #ff0050;
+    border-right: 11px solid transparent;
+  }
+
+  .Mobile-triangleTop {
+    position: absolute;
+    top: 0px;
+    left: 142px;
+    width: 11px;
+    height: 11px;
+    border-top: 11px solid #ff0050;
+    border-left: 11px solid transparent;
+  }
+  .Mobile-Contact-btn {
+    position: absolute;
+    top: 365px;
+    left: 32px;
+    width: 156px;
+    height: 48px;
+    border: 2px solid #ff0050;
+    background: #ff00504d 0% 0% no-repeat padding-box;
+    border: 2px solid #ff0050;
+    opacity: 1;
+    &:hover {
+      background-color: #ff0050;
+    }
+
+    .Mobile-Contact-us {
+      margin-top: 12px;
+      text-align: center;
+      font: normal normal medium 18px/21px Poppins;
+      letter-spacing: 0.36px;
+      color: #ffffff;
+      opacity: 1;
+
+      &:hover {
+        background-color: #ff0050;
+      }
+    }
+  }
+}
+
+.Mobile-models {
+  height: 409px;
+  width: 750px;
+  background-color: #161b1e;
+  border-bottom: 2px solid white;
+  border-top: 2px solid white;
+
+  .Mobile-image {
+    position: absolute;
+    border-right: 2px solid white;
+    height: 409px;
+    margin-left: 2px;
+
+    img {
+      position: relative;
+      height: 409px;
+      width: 750px;
+      /* UI Properties */
+      opacity: 0.4;
+      transition: 0.6s ease;
+    }
+  }
+}
+
+.ModelBackground {
+  height: 251.5px;
+  width: 750px;
+  border-bottom: 1px solid white;
+  border-top: 0.5px solid white;
+  background: #171b1e;
+
+  .Mobile-new {
+    margin-top: 40.5px;
+    margin-left: 32px;
+    height: 18px;
+    text-align: left;
+    font: normal normal normal 16px/75px Proxima Nova;
+    letter-spacing: 0.64px;
+    color: #ffffff;
+    text-transform: uppercase;
+    opacity: 0.6;
+  }
+
+  .Mobile-modelS {
+    margin-top: 8px;
+    margin-left: 32px;
+    height: 41px;
+    text-align: left;
+    font: normal normal 800 36px/75px Proxima Nova;
+    letter-spacing: 0.72px;
+    color: #ffffff;
+    text-transform: uppercase;
+    opacity: 0.87;
+  }
+
+  .Mobile-learn {
+    position: relative;
+    top: 21px;
+    left: 32px;
+    color: #ff0050;
+    text-align: left;
+    font: normal normal normal 16px/25px Poppins;
+    letter-spacing: 0.64px;
+    color: #ff0050;
+    opacity: 1;
+    text-decoration: none;
+
+    img{
+        position: relative;
+        top: 7px;
+        margin-left: 8px;
+    }
+    
+  }
+  
+}

@@ -44,7 +44,46 @@
   </div>
 </template>
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      scrolledNav: null,
+      mobile: null,
+      mobileNav: null,
+      windowWidth: null,
+    };
+  },
+  created() {
+    window.addEventListener("resize", this.checkScreen);
+    this.checkScreen;
+  },
+  //
+  methods: {
+    toggleMobileNav() {
+      this.mobileNav = !this.mobileNav;
+    },
+
+    updateScroll() {
+      const scrollPosition = window.scrollY;
+      if (scrollPosition > 50) {
+        this.scrolledNav = true;
+        return;
+      }
+      this.scrolledNav = false;
+    },
+
+    checkScreen() {
+      this.windowWidth = window.innerWidth;
+      if (this.windowWidth <= 750) {
+        this.mobile = true;
+        return;
+      }
+      this.mobile = false;
+      this.mobileNav = false;
+      return;
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>

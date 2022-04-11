@@ -1,5 +1,5 @@
 <template>
-  <div class="hero">
+  <div v-show="!mobile" class="hero">
     <Navigation />
     <img src="../assets/hero-home.jpg" />
 
@@ -17,11 +17,30 @@
         <div class="triangleBottom"></div>
       </div>
     </router-link>
-
-    <!----button type="button" to="/Contact" class="Contact-btn">Contact us</button------>
   </div>
 
-  <div class="ferrari">
+  <!---Mobile----->
+  <div v-show="mobile" class="Mobile-hero">
+    <Navigation />
+    <img src="../assets/hero-home.jpg" />
+
+    <div class="Mobile-goosebumps">GOOSEBUMPS</div>
+    <div class="Mobile-come">COME STANDARD</div>
+    <div class="Mobile-discover">
+      Discover the benefits of DRIVECLUB Trade-in and get a free vehicle
+      evaluation
+    </div>
+
+    <router-link :to="{ name: 'Contact' }">
+      <div class="Mobile-Contact-btn">
+        <p class="Mobile-Contact-us">Contact us</p>
+        <div class="Mobile-triangleTop"></div>
+        <div class="Mobile-triangleBottom"></div>
+      </div>
+    </router-link>
+  </div>
+
+  <div v-show="!mobile" class="ferrari">
     <div class="image">
       <img src="../assets/car-1.jpg" />
     </div>
@@ -36,7 +55,24 @@
     </div>
   </div>
 
-  <div class="models">
+  <!---Mobile---->
+  <div v-show="mobile" class="Mobile-models">
+    <div class="Mobile-image">
+      <img src="../assets/car-2.jpg" />
+    </div>
+  </div>
+  <div v-show="mobile" class="ModelBackground">
+    <div class="Mobile-new">new range</div>
+    <div class="Mobile-modelS">MODEL S</div>
+    <div>
+      <router-link class="Mobile-learn" :to="{ name: 'LearnMore' }"
+        >Learn more <img src="../assets/chevron.svg"/></router-link
+      >
+
+    </div>
+  </div>
+  <!------>
+  <div v-show="!mobile" class="models">
     <div class="image">
       <img src="../assets/car-2.jpg" />
     </div>
@@ -48,6 +84,24 @@
       <router-link class="learn" :to="{ name: 'LearnMore' }"
         >Learn more</router-link
       >
+    </div>
+  </div>
+
+  <!--mobile-->
+  <!---Mobile---->
+  <div v-show="mobile" class="Mobile-models">
+    <div class="Mobile-image">
+      <img src="../assets/car-1.jpg" />
+    </div>
+  </div>
+  <div v-show="mobile" class="ModelBackground">
+    <div class="Mobile-new">new range</div>
+    <div class="Mobile-modelS">LA FERRARI</div>
+    <div>
+      <router-link class="Mobile-learn" :to="{ name: 'LearnMore' }"
+        >Learn more <img src="../assets/chevron.svg"/></router-link
+      >
+
     </div>
   </div>
   <div type="footer">
@@ -63,12 +117,52 @@ import Footer from "../components/Footer.vue";
 export default {
   name: "Home",
   components: { Navigation, Footer },
+
+  data() {
+    return {
+      scrolledNav: null,
+      mobile: null,
+      mobileNav: null,
+      windowWidth: null,
+    };
+  },
+  created() {
+    window.addEventListener("resize", this.checkScreen);
+    this.checkScreen;
+  },
+  //
+  methods: {
+    toggleMobileNav() {
+      this.mobileNav = !this.mobileNav;
+    },
+
+    updateScroll() {
+      const scrollPosition = window.scrollY;
+      if (scrollPosition > 50) {
+        this.scrolledNav = true;
+        return;
+      }
+      this.scrolledNav = false;
+    },
+
+    checkScreen() {
+      this.windowWidth = window.innerWidth;
+      if (this.windowWidth <= 750) {
+        this.mobile = true;
+        return;
+      }
+      this.mobile = false;
+      this.mobileNav = false;
+      return;
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css?family=Proxima+Nova");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+@import "@/views/MobileStyle.scss";
 
 .hero {
   background-attachment: fixed;
