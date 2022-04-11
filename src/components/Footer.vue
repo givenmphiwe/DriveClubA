@@ -1,9 +1,9 @@
 <template>
-  <div class="footer">
+  <div v-show="!mobile" class="footer">
     <nav>
       <div class="brand">
         <img class="logo" src="../assets/logo.svg" />
-        <p class="copyright">&copy; DriveClub.All rights reserved</p>
+        <p class="copyright">&copy; Driveclub. All rights reserved</p>
       </div>
 
       <div class="model">
@@ -39,6 +39,51 @@
         <a href=""><img class="twitter" src="../assets/twitter.svg" /></a>
         <a href=""><img class="linkedin" src="../assets/linkedin.svg" /></a>
         <a href=""><img class="youtube" src="../assets/youtube.svg" /></a>
+      </div>
+    </nav>
+  </div>
+
+  <!---Mobile Foooter--->
+  <div v-show="mobile" class="Mobile-footer">
+    <nav>
+      <div class="Mobile-brand">
+        <img src="../assets/logo.svg" />
+        <p class="Mobile-copyright">&copy; Driveclub. All rights reserved</p>
+      </div>
+
+      <div class="Mobile-model">
+        MODELS
+        <ul>
+          <li>
+            <router-link class="Mobile-link" :to="{ name: '' }">la ferrari</router-link
+            >
+          </li>
+          <li>
+            <router-link class="Mobile-link" :to="{ name: '' }">model s</router-link>
+          </li>
+        </ul>
+      </div>
+
+      <div class="Mobile-more">
+        MORE
+        <ul>
+          <li>
+            <router-link class="Mobile-link" :to="{ name: 'Home' }">Home</router-link>
+          </li>
+          <li>
+            <router-link class="Mobile-link" :to="{ name: 'Contact' }"
+              >Contact us</router-link
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div class="Mobile-icon">
+        <a href=""><img class="Mobile-facebook" src="../assets/facebook.svg" /></a>
+        <a href=""><img class="Mobile-instagram" src="../assets/instagram.svg" /></a>
+        <a href=""><img class="Mobile-twitter" src="../assets/twitter.svg" /></a>
+        <a href=""><img class="Mobile-linkedin" src="../assets/linkedin.svg" /></a>
+        <a href=""><img class="Mobile-youtube" src="../assets/youtube.svg" /></a>
       </div>
     </nav>
   </div>
@@ -89,13 +134,15 @@ export default {
 <style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css?family=Proxima+Nova");
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+@import '@/components/MobileFooter.scss';
+
 
 .footer {
   top: 1603px;
   left: -2px;
   width: 1442px;
   height: 264px;
-  background: var(--grey-1000-elevation-) 0% 0% no-repeat padding-box;
+  background: grey 0% 0% no-repeat padding-box;
   background: #22282d 0% 0% no-repeat padding-box;
   opacity: 1;
 
